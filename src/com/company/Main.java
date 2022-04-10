@@ -9,5 +9,7 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String sAge = bufferedReader.readLine();
         int a = Integer.parseInt(sAge);
+
+        int b = a*2;
     }
 }
