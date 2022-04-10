@@ -13,13 +13,13 @@ public class Main {
             System.out.print("Вводи операцию (+, -, *, /): ");
             operation = reader.next().charAt(0);
             switch(operation) {
-                case '+': ans = num1 + num2;
+                case '+': ans = sum(num1,num2);
                     break;
-                case '-': ans = num1 - num2;
+                case '-': ans = minus(num1,num2);
                     break;
-                case '*': ans = num1 * num2;
+                case '*': ans = multiply(num1,num2);
                     break;
-                case '/': ans = num1 / num2;
+                case '/': ans = division(num1,num2);
                     break;
                 default:  System.out.print("тварь");
                     return;
