@@ -1,19 +1,19 @@
 package com.company;
 import java.util.Scanner;
 public class Main {
-        protected double sum(double a, double b){
+        protected static double sum(double a, double b){
             return a + b;
         }
 
-        protected double minus(double a, double b){
+        protected static double minus(double a, double b){
             return a - b;
         }
 
-        protected double multiply(double a, double b){
+        protected static double multiply(double a, double b){
             return a*b;
         }
 
-        protected double division(double a, double b){
+        protected static double division(double a, double b){
             return a/b;
         }
 
