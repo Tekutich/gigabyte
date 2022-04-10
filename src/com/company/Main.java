@@ -11,5 +11,7 @@ public class Main {
         int a = Integer.parseInt(sAge);
 
         int b = a*2;
+
+        System.out.println(b);
     }
 }
