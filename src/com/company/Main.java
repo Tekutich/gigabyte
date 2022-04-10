@@ -14,4 +14,12 @@ public class Main {
 
         System.out.println(b);
     }
+    protected String multiply(a,b){
+   return a*b;
+    }
+
+    protected String division(a,b){
+   return a/b;
+    }
 }
+
