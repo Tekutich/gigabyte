@@ -1,9 +1,13 @@
 package com.company;
-
+import java.io.*;
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //Ветка Димы
-        System.out.println("aboba");
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        String sAge = bufferedReader.readLine();
+        int nAge = Integer.parseInt(sAge);
     }
 }
