@@ -1,11 +1,11 @@
 package com.company;
 import java.util.Scanner;
 public class Main {
-        protected Integer sum(a, b){
+        protected double sum(double a, double b){
             return a + b;
         }
 
-        protected Integer minus(a, b){
+        protected double minus(double a, double b){
             return a - b;
         }
 
