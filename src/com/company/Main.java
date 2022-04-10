@@ -6,5 +6,7 @@ public class Main {
         //Ветка Артёма
         System.out.println("БУНТ!!!");
         System.out.println("За мной кто то наблюдает");
+        
+        int b = a*2;
     }
 }
