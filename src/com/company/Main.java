@@ -1,6 +1,13 @@
 package com.company;
 import java.util.Scanner;
 public class Main {
+        protected Integer sum(a, b){
+            return a + b;
+        }
+        protected Integer minus(a, b){
+            return a - b;
+        }
+
         public static void main(String[] args) {
             double num1;
             double num2;
