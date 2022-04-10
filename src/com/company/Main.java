@@ -4,8 +4,17 @@ public class Main {
         protected Integer sum(a, b){
             return a + b;
         }
+
         protected Integer minus(a, b){
             return a - b;
+        }
+
+        protected String multiply(a,b){
+            return a*b;
+        }
+
+        protected String division(a,b){
+            return a/b;
         }
 
         public static void main(String[] args) {
