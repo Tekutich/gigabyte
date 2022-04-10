@@ -8,6 +8,6 @@ public class Main {
         Reader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String sAge = bufferedReader.readLine();
-        int nAge = Integer.parseInt(sAge);
+        int a = Integer.parseInt(sAge);
     }
 }
