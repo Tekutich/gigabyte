@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        //Ветка Димы
+        //Ветка Артёма
         InputStream inputStream = System.in;
         Reader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -13,5 +13,12 @@ public class Main {
         int b = a*2;
 
         System.out.println(b);
+
+    }
+    protected Integer sum(a, b){
+        return a + b;
+    }
+    protected Integer minus(a, b){
+        return a - b;
     }
 }
