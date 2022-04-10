@@ -9,11 +9,11 @@ public class Main {
             return a - b;
         }
 
-        protected String multiply(a,b){
+        protected double multiply(double a, double b){
             return a*b;
         }
 
-        protected String division(a,b){
+        protected double division(double a, double b){
             return a/b;
         }
 
