@@ -27,6 +27,18 @@ public class Main {
         return a / b;
     }
 
+    protected static double square(double a) {
+        return Math.pow(a, 2);
+    }
+
+    protected static double root(double a) {
+        return Math.sqrt(a);
+    }
+
+    protected static double pow(double a, double b) {
+        return Math.pow(a, b);
+    }
+
     public static void writeToFileFromConsole(String str) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter("history.txt"));
         writer.write(str);
@@ -52,10 +64,10 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         System.out.print("Вводи 1 число или history:");
         String type = reader.next();
-        if (Objects.equals(type, "history")){
+        if (Objects.equals(type, "history")) {
             story();
             System.exit(0);
-        }else{
+        } else {
             num1 = Double.parseDouble(type);
         }
         System.out.print("Вводи 2 число:");
@@ -74,6 +86,15 @@ public class Main {
                 break;
             case "/":
                 ans = division(num1, num2);
+                break;
+            case "square":
+                ans = square(num1);
+                break;
+            case "root":
+                ans = root(num1);
+                break;
+            case "pow":
+                ans = pow(num1, num2);
                 break;
             default:
                 System.out.print("нет такого");
