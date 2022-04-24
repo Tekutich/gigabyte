@@ -1,14 +1,8 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.*;
-import java.io.PrintWriter;
 
 public class Main {
     protected static double sum(double a, double b) {
@@ -40,13 +34,13 @@ public class Main {
     }
 
     public static void writeToFileFromConsole(String str) throws IOException {
-        PrintWriter writer = new PrintWriter(new FileWriter("history.txt"));
+        PrintWriter writer = new PrintWriter(new FileWriter("/files/history.txt"));
         writer.write(str);
         writer.close();
     }
 
     protected static void story() throws IOException {
-        File file = new File("history.txt");
+        File file = new File("/files/history.txt");
         FileReader fr = new FileReader(file);
         BufferedReader reader = new BufferedReader(fr);
         String line = reader.readLine();
@@ -59,7 +53,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         double num1 = 0;
         double num2;
-        double ans = 0;
+        double ans;
         String operation;
         Scanner reader = new Scanner(System.in);
         System.out.print("Вводи 1 число или history:");
@@ -72,33 +66,20 @@ public class Main {
         }
         System.out.print("Вводи 2 число:");
         num2 = reader.nextDouble();
-        System.out.print("Вводи операцию (+, -, *, /,ну или то что у руслана ┐(シ)┌): ");
+        System.out.print("Вводи операцию (+, -, *, /, квадрат, корень, степень, ┐(シ)┌): ");
         operation = reader.next();
         switch (operation) {
-            case "+":
-                ans = sum(num1, num2);
-                break;
-            case "-":
-                ans = minus(num1, num2);
-                break;
-            case "*":
-                ans = multiply(num1, num2);
-                break;
-            case "/":
-                ans = division(num1, num2);
-                break;
-            case "square":
-                ans = square(num1);
-                break;
-            case "root":
-                ans = root(num1);
-                break;
-            case "pow":
-                ans = pow(num1, num2);
-                break;
-            default:
+            case "+" -> ans = sum(num1, num2);
+            case "-" -> ans = minus(num1, num2);
+            case "*" -> ans = multiply(num1, num2);
+            case "/" -> ans = division(num1, num2);
+            case "квадрат" -> ans = square(num1);
+            case "корень" -> ans = root(num1);
+            case "степень" -> ans = pow(num1, num2);
+            default -> {
                 System.out.print("нет такого");
                 return;
+            }
         }
         System.out.print(num1 + " " + operation + " " + num2 + " = " + ans);
         writeToFileFromConsole(num1 + " " + operation + " " + num2 + " = " + ans);
