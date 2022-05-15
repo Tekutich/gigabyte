@@ -90,5 +90,6 @@ public class Main {
 //        }
 //        System.out.print(num1 + " " + operation + " " + num2 + " = " + ans);
 //        writeToFileFromConsole(num1 + " " + operation + " " + num2 + " = " + ans);
+
     }
 }
