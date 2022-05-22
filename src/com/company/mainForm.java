@@ -7,10 +7,21 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Dimension;
 import java.net.URL;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+import javax.swing.ImageIcon;
+import java.awt.geom.AffineTransform;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 
@@ -42,6 +53,8 @@ public class mainForm implements ActionListener {
         inputNumberOne.addKeyListener(new NumberKeyListener());
         jFrame.setContentPane(panel);
         jFrame.setVisible(true);
+        jFrame.setIconImage(new ImageIcon("image/666.png").getImage());
+
     }
 
     @Override
@@ -78,22 +91,4 @@ public class mainForm implements ActionListener {
             }
         }
     }
-    protected static ImageIcon createIcon(String path) {
-        URL imgURL = mainForm.class.getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL);
-        } else {
-            System.err.println("File not found " + path);
-            return null;
-        }
-    }
-    public void run(){
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                JFrame.setDefaultLookAndFeelDecorated(true);
-                createIcon("");
-            }
-            });
-        }
-    }
-
+}
