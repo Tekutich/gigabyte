@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Класс формы
@@ -66,6 +68,11 @@ public class mainForm implements ActionListener {
      * @param str Строка
      */
     public static void writeToFile(String str) throws IOException {
+        File theDir = new File("/files/history.txt");
+        if (!theDir.exists()) {
+            Files.createDirectories(Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/files")));
+
+        }
         PrintWriter writer = new PrintWriter(new FileWriter("files/history.txt", true));
         writer.append(str).append("\r\n");
         writer.close();
@@ -102,6 +109,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция суммирования
+     *
      * @param a Первое число
      * @param b Второе число
      * @return double
@@ -112,6 +120,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция вычитания
+     *
      * @param a Первое число
      * @param b Второе число
      * @return double
@@ -122,6 +131,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция умножения
+     *
      * @param a Первое число
      * @param b Второе число
      * @return double
@@ -132,6 +142,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция деления
+     *
      * @param a Первое число
      * @param b Второе число
      * @return double
@@ -142,6 +153,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция возведения в квадрат
+     *
      * @param a Число
      * @return double
      */
@@ -151,6 +163,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция получения квадратного корня
+     *
      * @param a Число
      * @return double
      */
@@ -160,6 +173,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция возведения в степень
+     *
      * @param a Число
      * @param b Степень
      * @return double
@@ -170,6 +184,7 @@ public class mainForm implements ActionListener {
 
     /**
      * Функция обработки для кнопок
+     *
      * @param actionEvent Событие
      */
     @Override
@@ -276,6 +291,7 @@ public class mainForm implements ActionListener {
 
         /**
          * Функция обработки отжатия кнопки
+         *
          * @param event Событие
          */
         public void keyReleased(KeyEvent event) {  // переопределяем необходимые методы
