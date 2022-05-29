@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.io.*;
 
+/**
+ * Класс формы
+ */
 public class mainForm implements ActionListener {
     private JPanel panel;
     private JTextField inputNumberOne; // первое число
@@ -28,6 +31,9 @@ public class mainForm implements ActionListener {
     private JTextArea historyArea; // поле истории
     private JButton clearHistory; // кнопка очистить историю
 
+    /**
+     * Конструктор класса mainForm
+     */
     mainForm() {
         JFrame jFrame = new JFrame("Калькулятор");
 
@@ -54,12 +60,20 @@ public class mainForm implements ActionListener {
         historyArea.setVisible(false);
     }
 
+    /**
+     * Функция записи строки в файл
+     *
+     * @param str Строка
+     */
     public static void writeToFile(String str) throws IOException {
-        PrintWriter writer = new PrintWriter(new FileWriter("files/history.txt"));
-        writer.write(str);
+        PrintWriter writer = new PrintWriter(new FileWriter("files/history.txt", true));
+        writer.append(str).append("\r\n");
         writer.close();
     }
 
+    /**
+     * Вывод истории из файла
+     */
     protected void story() throws IOException {
         File file = new File("files/history.txt");
         FileReader fr = new FileReader(file);
@@ -71,6 +85,9 @@ public class mainForm implements ActionListener {
         }
     }
 
+    /*
+     * Функция очистка истории в файле
+     */
     protected void deleteStory() throws IOException {
         try {
             FileWriter fstream1 = new FileWriter("files/history.txt");// конструктор с одним параметром - для перезаписи
@@ -83,34 +100,78 @@ public class mainForm implements ActionListener {
         }
     }
 
+    /**
+     * Функция суммирования
+     * @param a Первое число
+     * @param b Второе число
+     * @return double
+     */
     protected static double sum(double a, double b) {
         return a + b;
     }
 
+    /**
+     * Функция вычитания
+     * @param a Первое число
+     * @param b Второе число
+     * @return double
+     */
     protected static double minus(double a, double b) {
         return a - b;
     }
 
+    /**
+     * Функция умножения
+     * @param a Первое число
+     * @param b Второе число
+     * @return double
+     */
     protected static double multiply(double a, double b) {
         return a * b;
     }
 
+    /**
+     * Функция деления
+     * @param a Первое число
+     * @param b Второе число
+     * @return double
+     */
     protected static double division(double a, double b) {
         return a / b;
     }
 
+    /**
+     * Функция возведения в квадрат
+     * @param a Число
+     * @return double
+     */
     protected static double square(double a) {
         return Math.pow(a, 2);
     }
 
+    /**
+     * Функция получения квадратного корня
+     * @param a Число
+     * @return double
+     */
     protected static double root(double a) {
         return Math.sqrt(a);
     }
 
+    /**
+     * Функция возведения в степень
+     * @param a Число
+     * @param b Степень
+     * @return double
+     */
     protected static double pow(double a, double b) {
         return Math.pow(a, b);
     }
 
+    /**
+     * Функция обработки для кнопок
+     * @param actionEvent Событие
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getActionCommand().equals("Очистить")) {
@@ -207,8 +268,16 @@ public class mainForm implements ActionListener {
         }
     }
 
+
+    /**
+     * Класс слушатель кнопок
+     */
     class NumberKeyListener extends KeyAdapter {   // расширяем абстрактный класс KeyAdapter
 
+        /**
+         * Функция обработки отжатия кнопки
+         * @param event Событие
+         */
         public void keyReleased(KeyEvent event) {  // переопределяем необходимые методы
             try {
                 Integer.parseInt(String.valueOf(event.getKeyChar()));
